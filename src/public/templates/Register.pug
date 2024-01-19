@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-eqiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, intial-scale=1.0")
+        title Pug Crud
+        link(rel="stylesheet", href="../css/style.css") 
+    body
+        h1 User Register
+            
+        - let a = typeof(errors)
+
+        ul
+            if a != 'undefined' 
+                each a in errors
+                   li= a
+        
+        form(action="/users/Register" method="Post")
+            div
+                input(type="text" id="name" name="name" placeholder="name")
+            div
+                input(type="text" id="email" name="email" placeholder="email")
+            div
+                input(type="password" id="password" name="password" placeholder="Password")
+            div
+                input(type="password" id="password2" name="password2" placeholder="Confirm Password")
+            div
+                input(type="submit" value="register")
+            
+            a(href='/users/login') Already register? Login here
+
+
